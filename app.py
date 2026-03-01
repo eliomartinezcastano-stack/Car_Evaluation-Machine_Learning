@@ -94,7 +94,7 @@ if page == "0) Portada":
         unsafe_allow_html=True
     )
     st.markdown(
-        "<h3 style='text-align: center; color: grey;'>Preddición de la aceptabilidad de un coche</h3>",
+        "<h3 style='text-align: center; color: grey;'>Predicción de la aceptabilidad de un coche</h3>",
         unsafe_allow_html=True
     )
     st.markdown("<br><br>", unsafe_allow_html=True)
@@ -117,7 +117,7 @@ if page == "1) Introducción":
     a partir de sus cracterísticas principales, simulando un sistema de ayuda a la decisión.
     """)
     st.markdown("""
-    ### Conexto del negocio
+    ### Contexto del negocio
     Este modelo se podría utilizar como:
     - Filtro inicial en un **portal de compra de coches**
     - Herramienta de apoyo para comparar configuraciones
