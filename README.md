@@ -12,31 +12,30 @@ Este modelo se podría utilizar como:
 Se utiliza el Car Evaluation Dataset, procedente del UCI Machine Learning Repository.
 https://archive.ics.uci.edu/dataset/19/car+evaluation
 
-Variables (features):
+- Variables (features):
 
-buying: precio de compra (vhigh, high, med, low)
+    - buying: precio de compra (vhigh, high, med, low)
 
-maint: coste de mantenimiento (vhigh, high, med, low)
+    - maint: coste de mantenimiento (vhigh, high, med, low)
 
-doors: número de puertas (2, 3, 4, 5more)
+    - doors: número de puertas (2, 3, 4, 5more)
 
-persons: capacidad de personas (2, 4, more)
+    - persons: capacidad de personas (2, 4, more)
 
-lug_boot: tamaño del maletero (small, med, big)
+    - lug_boot: tamaño del maletero (small, med, big)
 
-safety: nivel de seguridad (low, med, high)
+    - safety: nivel de seguridad (low, med, high)
 
 
-Target:
-
-class: aceptabilidad del coche (unacc, acc, good, vgood)
+- Target:
+    - class: aceptabilidad del coche (unacc, acc, good, vgood)
 
 # Notas sobre calidad del dato
-El dataset no contiene valores nulos.
+- El dataset no contiene valores nulos.
 
-Todas las variables son categóricas y requieren encoding para usarse en modelos de ML.
+- Todas las variables son categóricas y requieren encoding para usarse en modelos de ML.
 
-La variable objetivo está desbalanceada (predomina unacc). Este desbalance proviene del modelo experto original (reglas estrictas), por lo que se decidió no aplicar técnicas de balanceo en este proyecto.
+- La variable objetivo está desbalanceada (predomina unacc). Este desbalance proviene del modelo experto original (reglas estrictas), por lo que se decidió no aplicar técnicas de balanceo en este proyecto.
 
 # Preguntas clave 
 - ¿Podemos predecir la aceptabilidad de un coche usando solo 6 características?
@@ -51,57 +50,57 @@ La variable objetivo está desbalanceada (predomina unacc). Este desbalance prov
 # Proceso de análisis 
 1. EDA básica
 
-- Revisión de dimensiones, tipos de variables y distribución del target.
+    - Revisión de dimensiones, tipos de variables y distribución del target.
 
 2. Preprocesamiento
 
-- Separación X/y
+    - Separación X/y
 
-- Ordinal Encoding para convertir categorías a valores numéricos.
+    - Ordinal Encoding para convertir categorías a valores numéricos.
 
-- Train/Test split con stratify=y para mantener proporción de clases.
+    - Train/Test split con stratify=y para mantener proporción de clases.
 
 3. Modelado
 
-- Entrenamiento y comparación de:
+    - Entrenamiento y comparación de:
 
-    - Decision Tree
+        - Decision Tree
 
-    - Random Forest
+        - Random Forest
 
-    - Gradient Boosting
+        - Gradient Boosting
 
 4. Evaluación
 
-- Métricas principales:
+    - Métricas principales:
 
-    - Accuracy
+        - Accuracy
 
-    - F1 macro (prioritaria por el desbalance y por ser multiclase)
+        - F1 macro (prioritaria por el desbalance y por ser multiclase)
 
-- Uso de classification_report y confusion_matrix para interpretar resultados.
+    - Uso de classification_report y confusion_matrix para interpretar resultados.
 
 5. Optimización
 
-- Ajuste de hiperparámetros con:
+    - Ajuste de hiperparámetros con:
 
-    - GridSearchCV
+        - GridSearchCV
 
-    - RandomizedSearchCV
+        - RandomizedSearchCV
 
-- Selección del mejor modelo según F1 macro.
+    - Selección del mejor modelo según F1 macro.
 
 6. Implementación
 
-- Exportación del modelo (y encoder/pipeline) y creación de una app Streamlit con:
+    - Exportación del modelo (y encoder/pipeline) y creación de una app Streamlit con:
 
-    - selección de características
+        - selección de características
 
-    - predicción
+        - predicción
 
-    - feedback visual
+        - feedback visual
 
-    - sugerencias cuando el coche es unacc
+        - sugerencias cuando el coche es unacc
 
 # Resultados / Insights 
 
